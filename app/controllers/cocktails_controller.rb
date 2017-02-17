@@ -10,7 +10,6 @@ class CocktailsController < ApplicationController
 
   def create
     @cocktail = Cocktail.new(cocktail_params)
-
     if @cocktail.save
       redirect_to @cocktail, notice: 'Cocktail was successfully created.'
     else
@@ -29,6 +28,6 @@ class CocktailsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def cocktail_params
-    params.require(:cocktail).permit(:name)
+    params.require(:cocktail).permit(:name, :photo, :photo_cache)
   end
 end

@@ -11,3 +11,4 @@ my_hash = JSON.parse(open('http://www.thecocktaildb.com/api/json/v1/1/list.php?i
 my_hash["drinks"].each do |ingredient|
   Ingredient.create(name: ingredient["strIngredient1"])
 end
+

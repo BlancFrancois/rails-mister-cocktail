@@ -4,4 +4,5 @@ class Cocktail < ApplicationRecord
   validates :name, presence: true
   validates :name, uniqueness: { case_sensitive: false,
     message: "This cocktail already exists" }
+  mount_uploader :photo, PhotoUploader
 end
